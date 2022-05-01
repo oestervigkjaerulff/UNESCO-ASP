@@ -1,0 +1,454 @@
+/* 
+Theme Name:    Unesco asp
+Template:    twentynineteen 
+Version:      1.0.47
+Description:  Twenty Nineteen Child Theme
+Author:      Alberte Kjærulff
+
+*/
+
+@font-face {
+  font-family: "quicksand";
+  src: url(Quicksand/Quicksand-VariableFont_wght.ttf) format(ttf);
+  font-family: "krub";
+  src: url(Krub/Krub-Regular.ttf) format(ttf);
+}
+
+body {
+  margin-inline: 0%;
+  background-color: whitesmoke;
+}
+
+p {
+  font-family: "quicksand";
+}
+
+h1,
+h2,
+h3 {
+  font-family: "krub";
+}
+
+/*******************STYLING AF HEADER************/
+/*flytter globus op*/
+.site-logo {
+  top: -50%;
+}
+
+/*******************STYLING AF FILTRERING************/
+
+/*Placering af knapper*/
+#filtrering {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/*Farve på knapper*/
+#filtrering button {
+  background-color: #fcad46;
+  border-radius: 2rem;
+  font-family: "krub";
+  margin: 0.5%;
+}
+
+#filtrering button:hover {
+  background-color: #01085e;
+}
+
+#filtrering button:focus {
+  background-color: #01085e;
+}
+
+/*******************STYLING AF FOOTER*****************/
+
+/*Sætter al information ind i grid, så det står ved siden af hinanden*/
+.site-info {
+  display: grid;
+  grid-template-columns: 150px repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2%;
+}
+
+/*Størrelse på logo i footer*/
+.logo-footer-container {
+  width: 100%;
+}
+
+/*Fjerner prikker fra li*/
+footer li {
+  list-style: none;
+}
+
+/*Indsætter logo på footer*/
+.logo-footer {
+  width: 100%;
+  height: 100%;
+  background-image: url("webp/GLOBE_.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+/*Fjerner streg over H1*/
+h1:not(.site-title):before,
+h2:before {
+  background: whitesmoke;
+  content: "\020";
+  display: none;
+  height: 2px;
+  margin: 1rem 0;
+  width: 1em;
+}
+
+/*Fjerner author osv..*/
+.entry .entry-meta a,
+.entry .entry-footer a,
+.entry .entry-title {
+  display: none;
+}
+/*Fjerner iconer til author osv..*/
+.entry .entry-meta .svg-icon,
+.entry .entry-footer .svg-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  display: none;
+}
+
+#colophon .widget-column {
+  display: none;
+}
+/*Fjerner margin mellem billede og header*/
+.entry .entry-header {
+  display: none;
+}
+/*Har sat en section på forsiden, og har givet den klassen top. Derefter sat en div med klassen lange og lange2 */
+.lange {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.lange2 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Styling af citat på forsiden*/
+.citat {
+  position: absolute;
+  top: 90%;
+  left: 62%;
+  transform: translate(-190%, -18%);
+  background-color: #01095e8f;
+  font-weight: bolder;
+  padding: 1%;
+  padding-inline: 2%;
+  font-family: "quicksand";
+}
+
+.citat p {
+  color: white;
+}
+
+/*Styling af splashbillede på forsiden*/
+.billede1 {
+  background-image: url(webp/damer-kopi.webp);
+  background-size: cover;
+  background-position: right;
+  height: 63vh;
+  width: 100%;
+}
+
+/*Her er mellemrummet over headeren gjort mindren, og margin derfor tilpasset*/
+.site-header {
+  margin: 0;
+  padding: 1rem 0;
+  background-color: whitesmoke;
+}
+
+.site-description,
+.site-description {
+  display: none;
+}
+/*Skifter farven på den allerede eksisterende nav*/
+.main-navigation .main-menu > li > a {
+  font-weight: 700;
+  color: #01085e;
+  margin-right: 0.5rem;
+  font-family: "quicksand";
+}
+
+.main-navigation .sub-menu {
+  background-color: #01085e;
+  font-family: "quicksand";
+}
+
+/*Placerer nav centreret */
+body.page .main-navigation,
+.main-navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
+  position: relative;
+  top: 0.2rem;
+}
+/*Skifter farve på UNESCO asp ved siden af logoet*/
+
+.site-title a:visited {
+  color: #01085e;
+}
+
+.entry .entry-meta {
+  margin: 1rem 0;
+  display: none;
+}
+
+.bottom {
+  margin-inline: 10%;
+}
+
+#content .site-content {
+  display: none;
+}
+
+/*Indsat pil til navigation på siden*/
+
+.pil {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  animation-name: pil_kf;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  color: rgb(40, 40, 174);
+  margin-top: 5%;
+}
+
+.pil:hover {
+  color: #f2b82b;
+}
+
+#forside_container h2 {
+  margin-top: 10%;
+  font-family: "krub";
+}
+
+#forside_container p {
+  font-family: "quicksand";
+}
+
+/*Eftersom vores section class "projektcontainer", kalder på templaten, er det den vi skal have fat i før vi kan style på vores projekter*/
+.projektcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 30px;
+  cursor: pointer;
+  margin-inline: 10%;
+}
+
+.projektcontainer img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.styleprojekter {
+  padding: 15px;
+  cursor: pointer;
+  background-color: #193a8fe7;
+}
+
+/*styling af overskrifter på projekt-siden*/
+.styleprojekter h2 {
+  font-size: 1rem;
+  color: white;
+}
+
+.styleprojekter p {
+  font-size: 0.8rem;
+  color: white;
+}
+
+.fag,
+.uddannelsestrin {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
+}
+
+/********************Styling af first section på "bliv unesco" siden*******************/
+
+.bliv_splash {
+  background-image: url(webp/elever_paa_raekke.webp);
+  background-size: cover;
+  background-position: right;
+  height: 63vh;
+  width: 100%;
+}
+
+.bliv_h1 {
+  position: absolute;
+  top: 70%;
+  left: 31%;
+  transform: translate(-50%, -50%);
+  background-color: #f2ba2ba1;
+  padding: 2%;
+  color: whitesmoke;
+  border-radius: 1rem;
+  font-family: "krub";
+}
+
+.bliv_grid,
+#ung_container .kolonner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  margin-inline: 10%;
+}
+
+.kolonne1,
+.kolonne2 {
+  background-color: rgb(212, 226, 236);
+  padding: 3%;
+  margin-top: 18%;
+  font-family: "quicksand";
+}
+
+#ung_container .kolonner {
+  margin-bottom: 10%;
+}
+
+/*********** LOGIN SIDE **********/
+.bliv3 {
+  background-color: #eb9148;
+  color: white;
+  margin-top: 10%;
+  padding-block: 5%;
+}
+
+label,
+input,
+textarea,
+select,
+label p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  color: #552525;
+  padding: 4%;
+  padding-inline: 5%;
+}
+
+.bruger,
+.tilmeld h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.bruger {
+  font-size: smaller;
+}
+
+.bekraeft_knap {
+  padding: 1.5%;
+  padding-inline: 3.5%;
+  border-color: #8c4949;
+  background-color: rgb(92, 38, 38);
+  margin-left: 20%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.login_billede {
+  border-radius: 0.5rem;
+}
+
+.bekraeft_knap:hover {
+  background-color: #8c4949;
+}
+
+.login_h1 {
+  margin-left: 1rem;
+  font-size: 3rem;
+  color: #8c4949;
+}
+
+label p,
+.tilmeld h2,
+.tilmeld p {
+  color: white;
+}
+
+.login_info {
+  display: flex;
+  gap: 10%;
+  margin-inline: 20%;
+}
+
+.form-felt {
+  margin-top: 3%;
+  margin-inline: 20%;
+}
+
+/********************Styling af first section på "UNG" siden*******************/
+
+/*Sætter splash ind*/
+.ung_splash {
+  background-image: url(webp/highfive.webp);
+  background-size: cover;
+  background-position: right;
+  height: 63vh;
+  width: 100%;
+}
+
+.ungbillede {
+  background-image: url(webp/boern_i_klasse.webp);
+  background-size: cover;
+  width: 100%;
+  aspect-ratio: 2/1;
+}
+
+.ung2 {
+  position: absolute;
+  top: 73%;
+  left: 31%;
+  transform: translate(-50%, -50%);
+  background-color: #f2ba2ba1;
+  padding: 1%;
+  color: whitesmoke;
+  border-radius: 1rem;
+  font-family: "krub";
+}
+
+/******************* STYLING AF SINGLE LOOP VIEW AF PROJEKTER *********************/
+
+#single_splash .single_billede {
+  background-image: url(webp/no_billede.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 63vh;
+  width: 100%;
+}
+
+.style_single {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.style_article {
+  margin-inline: 10%;
+  margin-top: 5%;
+  background-color: #f1a0b695;
+  padding: 3%;
+  border-radius: 1rem;
+}
